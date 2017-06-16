@@ -8,6 +8,9 @@ public:
 	Renderer(Window& window);
 	void BiginFrame();
 	void EndFrame();
+
+	ID3D11Device* getDevice();
+	ID3D11DeviceContext* getDeviceContext();
 private:
 	void CreateDevice(Window& window);
 	void CreateRenderTarget();

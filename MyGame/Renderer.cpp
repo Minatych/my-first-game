@@ -20,6 +20,16 @@ void Renderer::EndFrame()
 	swapChain->Present(1, 0);
 }
 
+ID3D11Device * Renderer::getDevice()
+{
+	return device;
+}
+
+ID3D11DeviceContext * Renderer::getDeviceContext()
+{
+	return deviceContext;
+}
+
 void Renderer::CreateDevice(Window & window)
 {
 	// Define our swap chain
