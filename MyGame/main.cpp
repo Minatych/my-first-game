@@ -19,6 +19,8 @@ int CALLBACK WinMain(HINSTANCE appInstance, HINSTANCE prevInstance, LPSTR cmdLin
 		}
 
 		// ... Main loop ...
+		renderer.BiginFrame();
+		renderer.EndFrame();
 	}
 
 	return 0;

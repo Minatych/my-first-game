@@ -3,6 +3,25 @@
 
 Renderer::Renderer(Window & window)
 {
+	CreateDevice(window);
+	CreateRenderTarget();
+}
+
+void Renderer::BiginFrame()
+{
+	// Set the background color!
+	float clearColor[] = { .25f, .5f, 1, 1 };
+	deviceContext->ClearRenderTargetView(renderTargetView, clearColor);
+}
+
+void Renderer::EndFrame()
+{
+	//Swap buffer
+	swapChain->Present(1, 0);
+}
+
+void Renderer::CreateDevice(Window & window)
+{
 	// Define our swap chain
 	DXGI_SWAP_CHAIN_DESC swapChainDesc = { 0 };
 	swapChainDesc.BufferCount = 1;//Double buffering
@@ -25,3 +44,12 @@ Renderer::Renderer(Window & window)
 		exit(-1);
 	}
 }
+
+void Renderer::CreateRenderTarget()
+{
+	ID3D11Texture2D* backBuffer;
+	swapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&backBuffer);
+	device->CreateRenderTargetView(backBuffer, nullptr, &renderTargetView);
+	backBuffer->Release();
+}
+
