@@ -21,7 +21,7 @@ int CALLBACK WinMain(HINSTANCE appInstance, HINSTANCE prevInstance, LPSTR cmdLin
 		}
 
 		// ... Main loop ...
-		renderer.BiginFrame();
+		renderer.BeginFrame();
 		triangle.Draw(renderer);
 		renderer.EndFrame();
 	}

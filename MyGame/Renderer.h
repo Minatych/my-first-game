@@ -6,7 +6,7 @@ class Renderer
 {
 public:
 	Renderer(Window& window);
-	void BiginFrame();
+	void BeginFrame();
 	void EndFrame();
 
 	ID3D11Device* getDevice();

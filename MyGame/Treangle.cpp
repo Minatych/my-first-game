@@ -1,4 +1,7 @@
 #include "Treangle.h"
+#include <fstream>
+#include <vector>
+
 
 struct Vertex {
 	float x, y;
@@ -7,10 +10,38 @@ struct Vertex {
 
 Treangle::Treangle(Renderer & renderer)
 {
+	CreateMesh(renderer);
+	CreateShaders(renderer);
+}
+
+void Treangle::Draw(Renderer & renderer)
+{
+	// Bind iur triangle shaders
+	renderer.getDeviceContext()->VSSetShader(vertexShader, nullptr, 0);
+	renderer.getDeviceContext()->PSSetShader(pixelShader, nullptr, 0);
+
+	// Bind our vertex buffer
+	UINT stride = sizeof(Vertex);
+	UINT offset = 0;
+	renderer.getDeviceContext()->IASetVertexBuffers(0, 1, &vertexBuffer, &stride, &offset);//Input Assembler
+
+	// Draw
+	renderer.getDeviceContext()->Draw(3, 0);
+}
+
+Treangle::~Treangle()
+{
+	vertexBuffer->Release();
+	vertexShader->Release();
+	pixelShader->Release();
+}
+
+void Treangle::CreateMesh(Renderer & renderer)
+{
 	// Define our vertices
-	Vertex vertices[] = 
+	Vertex vertices[] =
 	{
-		{-1,-1, 1, 0, 0 },
+		{ -1,-1, 1, 0, 0 },
 		{ 0, 1, 0, 1, 0 },
 		{ 1,-1, 0, 0, 1 },
 	};
@@ -23,17 +54,14 @@ Treangle::Treangle(Renderer & renderer)
 	renderer.getDevice()->CreateBuffer(&vertexBufferDesc, &vertexData, &vertexBuffer);
 }
 
-void Treangle::Draw(Renderer & renderer)
+void Treangle::CreateShaders(Renderer & renderer)
 {
-	// Bind our vertex buffer
-	UINT stride = sizeof(Vertex);
-	UINT offset = 0;
-	renderer.getDeviceContext()->IASetVertexBuffers(0, 1, &vertexBuffer, &stride, &offset);//Input Assembler
+	std::ifstream vsFile("triangleVertexShader.cso", std::ios::binary);
+	std::ifstream psFile("trianglePixelShader.cso", std::ios::binary);
 
-	// Draw
-	//renderer.getDeviceContext()->Draw(3, 0);
-}
+	std::vector<char> vsData = {std::istreambuf_iterator<char>(vsFile), std::istreambuf_iterator<char>()};
+	std::vector<char> psData = {std::istreambuf_iterator<char>(psFile), std::istreambuf_iterator<char>() };
 
-Treangle::~Treangle()
-{
+	renderer.getDevice()->CreateVertexShader(vsData.data(), vsData.size(), nullptr, &vertexShader);
+	renderer.getDevice()->CreatePixelShader(psData.data(), psData.size(), nullptr, &pixelShader);
 }

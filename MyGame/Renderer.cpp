@@ -7,7 +7,7 @@ Renderer::Renderer(Window & window)
 	CreateRenderTarget();
 }
 
-void Renderer::BiginFrame()
+void Renderer::BeginFrame()
 {
 	// Set the background color!
 	float clearColor[] = { .25f, .5f, 1, 1 };
