@@ -16,17 +16,19 @@ Treangle::Treangle(Renderer & renderer)
 
 void Treangle::Draw(Renderer & renderer)
 {
+	auto deviceContext = renderer.getDeviceContext();
 	// Bind iur triangle shaders
-	renderer.getDeviceContext()->VSSetShader(vertexShader, nullptr, 0);
-	renderer.getDeviceContext()->PSSetShader(pixelShader, nullptr, 0);
+	deviceContext->IASetInputLayout(inputLayOut);
+	deviceContext->VSSetShader(vertexShader, nullptr, 0);
+	deviceContext->PSSetShader(pixelShader, nullptr, 0);
 
 	// Bind our vertex buffer
 	UINT stride = sizeof(Vertex);
 	UINT offset = 0;
-	renderer.getDeviceContext()->IASetVertexBuffers(0, 1, &vertexBuffer, &stride, &offset);//Input Assembler
+	deviceContext->IASetVertexBuffers(0, 1, &vertexBuffer, &stride, &offset);//Input Assembler
 
 	// Draw
-	renderer.getDeviceContext()->Draw(3, 0);
+	deviceContext->Draw(3, 0);
 }
 
 Treangle::~Treangle()
@@ -34,6 +36,7 @@ Treangle::~Treangle()
 	vertexBuffer->Release();
 	vertexShader->Release();
 	pixelShader->Release();
+	inputLayOut->Release();
 }
 
 void Treangle::CreateMesh(Renderer & renderer)
@@ -56,6 +59,7 @@ void Treangle::CreateMesh(Renderer & renderer)
 
 void Treangle::CreateShaders(Renderer & renderer)
 {
+
 	std::ifstream vsFile("triangleVertexShader.cso", std::ios::binary);
 	std::ifstream psFile("trianglePixelShader.cso", std::ios::binary);
 
@@ -64,4 +68,12 @@ void Treangle::CreateShaders(Renderer & renderer)
 
 	renderer.getDevice()->CreateVertexShader(vsData.data(), vsData.size(), nullptr, &vertexShader);
 	renderer.getDevice()->CreatePixelShader(psData.data(), psData.size(), nullptr, &pixelShader);
+
+	// Create input layout
+	D3D11_INPUT_ELEMENT_DESC layout[] = 
+	{
+		{"POSITION", 0, DXGI_FORMAT_R32G32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"COLOR", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, D3D11_APPEND_ALIGNED_ELEMENT, D3D11_INPUT_PER_VERTEX_DATA, 0 }
+	};
+	renderer.getDevice()->CreateInputLayout(layout, 2, vsData.data(), vsData.size(), &inputLayOut);
 }

@@ -9,6 +9,13 @@ Renderer::Renderer(Window & window)
 
 void Renderer::BeginFrame()
 {
+	// Bind render target
+	deviceContext->OMSetRenderTargets(1, &renderTargetView, nullptr);
+
+	// Set viewport
+	auto viewport = CD3D11_VIEWPORT(0.f, 0.f, (float)backBufferDesc.Width, (float)backBufferDesc.Height);
+	deviceContext->RSSetViewports(1, &viewport);
+
 	// Set the background color!
 	float clearColor[] = { .25f, .5f, 1, 1 };
 	deviceContext->ClearRenderTargetView(renderTargetView, clearColor);
@@ -60,6 +67,8 @@ void Renderer::CreateRenderTarget()
 	ID3D11Texture2D* backBuffer;
 	swapChain->GetBuffer(0, __uuidof(ID3D11Texture2D), (void**)&backBuffer);
 	device->CreateRenderTargetView(backBuffer, nullptr, &renderTargetView);
+
+	backBuffer->GetDesc(&backBufferDesc);
 	backBuffer->Release();
 }
 
