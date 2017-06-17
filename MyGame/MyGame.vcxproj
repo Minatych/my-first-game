@@ -144,13 +144,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MathExceptions.cpp" />
+    <ClCompile Include="Point2D.cpp" />
     <ClCompile Include="Renderer.cpp" />
     <ClCompile Include="Treangle.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MathExceptions.h" />
+    <ClInclude Include="Matrix.h" />
     <ClInclude Include="Renderer.h" />
     <ClInclude Include="Treangle.h" />
+    <ClInclude Include="Vec2.h" />
+    <ClInclude Include="Vec3.h" />
+    <ClInclude Include="Vect.h" />
     <ClInclude Include="Window.h" />
   </ItemGroup>
   <ItemGroup>

@@ -16,6 +16,9 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{6c6b066c-0768-4eb8-a4b0-f4fcac49dedf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Заголовочные файлы\Math">
+      <UniqueIdentifier>{f9327a46-f26f-4a8e-9ceb-712cc852c297}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Window.cpp">
@@ -30,6 +33,12 @@
     <ClCompile Include="Treangle.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
+    <ClCompile Include="MathExceptions.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Point2D.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Window.h">
@@ -40,6 +49,21 @@
     </ClInclude>
     <ClInclude Include="Treangle.h">
       <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="MathExceptions.h">
+      <Filter>Заголовочные файлы\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>Заголовочные файлы\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec2.h">
+      <Filter>Заголовочные файлы\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec3.h">
+      <Filter>Заголовочные файлы\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Vect.h">
+      <Filter>Заголовочные файлы\Math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
