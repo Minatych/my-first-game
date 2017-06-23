@@ -1,4 +1,4 @@
-#include "Treangle.h"
+#include "Triangle.h"
 #include <fstream>
 #include <vector>
 
@@ -8,13 +8,13 @@ struct Vertex {
 	float r, g, b;
 };
 
-Treangle::Treangle(Renderer & renderer)
+Triangle::Triangle(Renderer & renderer)
 {
 	CreateMesh(renderer);
 	CreateShaders(renderer);
 }
 
-void Treangle::Draw(Renderer & renderer)
+void Triangle::Draw(Renderer & renderer)
 {
 	auto deviceContext = renderer.getDeviceContext();
 	// Bind iur triangle shaders
@@ -31,7 +31,7 @@ void Treangle::Draw(Renderer & renderer)
 	deviceContext->Draw(3, 0);
 }
 
-Treangle::~Treangle()
+Triangle::~Triangle()
 {
 	vertexBuffer->Release();
 	vertexShader->Release();
@@ -39,7 +39,7 @@ Treangle::~Treangle()
 	inputLayOut->Release();
 }
 
-void Treangle::CreateMesh(Renderer & renderer)
+void Triangle::CreateMesh(Renderer & renderer)
 {
 	// Define our vertices
 	Vertex vertices[] =
@@ -57,7 +57,7 @@ void Treangle::CreateMesh(Renderer & renderer)
 	renderer.getDevice()->CreateBuffer(&vertexBufferDesc, &vertexData, &vertexBuffer);
 }
 
-void Treangle::CreateShaders(Renderer & renderer)
+void Triangle::CreateShaders(Renderer & renderer)
 {
 
 	std::ifstream vsFile("triangleVertexShader.cso", std::ios::binary);

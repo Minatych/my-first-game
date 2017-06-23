@@ -1,12 +1,12 @@
 #pragma once
 #include "Renderer.h"
 
-class Treangle
+class Triangle
 {
 public:
-	Treangle(Renderer& renderer);
+	Triangle(Renderer& renderer);
 	void Draw(Renderer& renderer);
-	~Treangle();
+	~Triangle();
 private:
 	void CreateMesh(Renderer& renderer);
 	void CreateShaders(Renderer& renderer);
