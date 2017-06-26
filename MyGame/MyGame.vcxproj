@@ -147,11 +147,20 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Graphics.h" />
+    <ClInclude Include="Input.h" />
     <ClInclude Include="MathExceptions.h" />
     <ClInclude Include="Matrix.h" />
+    <ClInclude Include="system.h" />
     <ClInclude Include="Vec2.h" />
     <ClInclude Include="Vec3.h" />
     <ClInclude Include="Vect.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Graphics.cpp" />
+    <ClCompile Include="Input.cpp" />
+    <ClCompile Include="mian.cpp" />
+    <ClCompile Include="system.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
