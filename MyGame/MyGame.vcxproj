@@ -149,10 +149,11 @@
     <ClCompile Include="MathExceptions.cpp" />
     <ClCompile Include="Point2D.cpp" />
     <ClCompile Include="Renderer.cpp" />
-    <ClCompile Include="Treangle.cpp" />
+    <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="GameMath.h" />
     <ClInclude Include="MathExceptions.h" />
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="Renderer.h" />

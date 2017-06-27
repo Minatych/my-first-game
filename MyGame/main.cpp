@@ -2,6 +2,7 @@
 #include "Window.h"
 #include "Renderer.h"
 #include "Triangle.h"
+#include "GameMath.h"
 
 int CALLBACK WinMain(HINSTANCE appInstance, HINSTANCE prevInstance, LPSTR cmdLine, int cmdCount)
 {

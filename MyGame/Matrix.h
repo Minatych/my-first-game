@@ -1,7 +1,7 @@
 #pragma once
 #include <stdexcept>
 #include "MathExceptions.h"
-#define matrix_T template<int n, int m, typename T>//geneic class
+#define matrix_T template<int n, int m, typename T>//generic class
 matrix_T class Matrix;
 template<int n, typename T> class Vect;
 #pragma region Determination of operators
