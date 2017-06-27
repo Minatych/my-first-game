@@ -147,6 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="D3dclass.h" />
     <ClInclude Include="Graphics.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="MathExceptions.h" />
@@ -157,6 +158,7 @@
     <ClInclude Include="Vect.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="D3dclass.cpp" />
     <ClCompile Include="Graphics.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="mian.cpp" />

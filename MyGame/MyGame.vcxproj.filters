@@ -33,14 +33,17 @@
     <ClInclude Include="Vect.h">
       <Filter>Заголовочные файлы\Math</Filter>
     </ClInclude>
-    <ClInclude Include="system.h">
-      <Filter>Файлы исходного кода</Filter>
+    <ClInclude Include="Graphics.h">
+      <Filter>Заголовочные файлы</Filter>
     </ClInclude>
     <ClInclude Include="Input.h">
-      <Filter>Файлы исходного кода</Filter>
+      <Filter>Заголовочные файлы</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics.h">
-      <Filter>Файлы исходного кода</Filter>
+    <ClInclude Include="system.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="D3dclass.h">
+      <Filter>Заголовочные файлы</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -54,6 +57,9 @@
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
     <ClCompile Include="Graphics.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="D3dclass.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
   </ItemGroup>
