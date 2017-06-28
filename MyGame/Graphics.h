@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////////////////////
-// Filename: graphicsclass.h
+// Filename: graphic.h
 ////////////////////////////////////////////////////////////////////////////////
 #pragma once
 
@@ -7,7 +7,9 @@
 // INCLUDES //
 //////////////
 #include "d3dclass.h"
-
+#include "cameraclass.h"
+#include "modelclass.h"
+#include "colorshaderclass.h"
 
 /////////////
 // GLOBALS //
@@ -37,4 +39,7 @@ private:
 
 private:
 	D3DClass* direct3D;
+	CameraClass* camera;
+	ModelClass* model;
+	ColorShaderClass* colorShader;
 };

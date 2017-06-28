@@ -1,5 +1,5 @@
 ////////////////////////////////////////////////////////////////////////////////
-// Filename: systemclass.cpp
+// Filename: system.cpp
 ////////////////////////////////////////////////////////////////////////////////
 #include "system.h"
 
@@ -82,6 +82,7 @@ void System::Shutdown()
 
 void System::Run()
 {
+
 	MSG msg;
 	bool done, result;
 
@@ -197,7 +198,7 @@ void System::InitializeWindows(int& screenWidth, int& screenHeight)
 	wc.hCursor = LoadCursor(NULL, IDC_ARROW);
 	wc.hbrBackground = (HBRUSH)GetStockObject(BLACK_BRUSH);
 	wc.lpszMenuName = NULL;
-	wc.lpszClassName = (LPCSTR)applicationName;
+	wc.lpszClassName = applicationName;
 	wc.cbSize = sizeof(WNDCLASSEX);
 
 	// Register the window class.
@@ -236,7 +237,7 @@ void System::InitializeWindows(int& screenWidth, int& screenHeight)
 	}
 
 	// Create the window with the screen settings and get the handle to it.
-	hwnd = CreateWindowEx(WS_EX_APPWINDOW, (LPCSTR)applicationName, (LPCSTR)applicationName,
+	hwnd = CreateWindowEx(WS_EX_APPWINDOW, applicationName, applicationName,
 		WS_CLIPSIBLINGS | WS_CLIPCHILDREN | WS_POPUP,
 		posX, posY, screenWidth, screenHeight, NULL, NULL, hinstance, NULL);
 
@@ -267,7 +268,7 @@ void System::ShutdownWindows()
 	hwnd = NULL;
 
 	// Remove the application instance.
-	UnregisterClass((LPCSTR)applicationName, hinstance);
+	UnregisterClass(applicationName, hinstance);
 	hinstance = NULL;
 
 	// Release the pointer to this class.

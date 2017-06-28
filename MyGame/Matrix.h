@@ -241,7 +241,7 @@ matrix_T inline Vect<n, T> Matrix<n, m, T>::Reduse(const Matrix<n, n, T>& M, con
 					matrix[j][k] -= tmp*matrix[i][k];
 			}
 		}
-		/*обратный ход*/
+		//Reverse move
 		xx[n - 1] = matrix[n - 1][n];
 		for (i = n - 2; i >= 0; i--)
 		{
@@ -252,13 +252,13 @@ matrix_T inline Vect<n, T> Matrix<n, m, T>::Reduse(const Matrix<n, n, T>& M, con
 }
 matrix_T inline Matrix<n, n, T> Matrix<n, m, T>::Inverse(const Matrix<n, n, T>& M)
 {
-	Matrix<n, 2*n, T> A;//Temp matrix
+	Matrix<n, 2*n, T> A;//the temp matrix
 	for (int i = 0; i < n; i++)
 		for (int j = 0; j < n; j++)
 		{
-			A[i][j] = M[i][j];//Left M matrix
-			A[i][j + n] = i==j ? 1 : 0;//Right E matrix;
-		}//Fill temp matrix
+			A[i][j] = M[i][j];//the Left matrix
+			A[i][j + n] = i==j ? 1 : 0;// the right E matrix;
+		}//Fill the temp matrix
 
 	T tmp;
 	double det = 1;
