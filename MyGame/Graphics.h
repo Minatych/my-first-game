@@ -10,6 +10,7 @@
 #include "cameraclass.h"
 #include "modelclass.h"
 #include "colorshaderclass.h"
+#include "textureshaderclass.h"
 
 /////////////
 // GLOBALS //
@@ -42,4 +43,5 @@ private:
 	CameraClass* camera;
 	ModelClass* model;
 	ColorShaderClass* colorShader;
+	TextureShaderClass* textureShader;
 };

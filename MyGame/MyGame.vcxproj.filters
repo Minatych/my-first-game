@@ -57,6 +57,12 @@
     <ClInclude Include="Cameraclass.h">
       <Filter>Заголовочные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="Textureshaderclass.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
+    <ClInclude Include="Textureclass.h">
+      <Filter>Заголовочные файлы</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="mian.cpp">
@@ -83,12 +89,24 @@
     <ClCompile Include="Cameraclass.cpp">
       <Filter>Файлы исходного кода</Filter>
     </ClCompile>
+    <ClCompile Include="Textureshaderclass.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
+    <ClCompile Include="Textureclass.cpp">
+      <Filter>Файлы исходного кода</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="Color.vs">
       <Filter>Shaders</Filter>
     </None>
     <None Include="Color.ps">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Texture.ps">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Texture.vs">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
