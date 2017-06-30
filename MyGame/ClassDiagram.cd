@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="System">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAIAAAQAABAIAAQAAgYAAgBgAAAAAAAgAAAM=</HashCode>
+      <FileName>system.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="graphics" />
+      <Field Name="input" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Graphics" Collapsed="true">
+    <Position X="4.5" Y="1.25" Width="1.5" />
+    <AssociationLine Name="camera" Type="CameraClass" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.521" Y="1.812" />
+        <Point X="5.521" Y="4.236" />
+        <Point X="6.562" Y="4.236" />
+        <Point X="6.562" Y="5.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="textureShader" Type="TextureShaderClass" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="4.979" Y="1.812" />
+        <Point X="4.979" Y="3.89" />
+        <Point X="3" Y="3.89" />
+        <Point X="3" Y="5.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="colorShader" Type="ColorShaderClass" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="5.25" Y="1.812" />
+        <Point X="5.25" Y="4.192" />
+        <Point X="4.75" Y="4.192" />
+        <Point X="4.75" Y="5.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="direct3D" Type="D3DClass" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="6" Y="1.403" />
+        <Point X="7.5" Y="1.403" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAIAAABgAAAQAAAAAAASAACAAAAAAAABAAAAAIAAE=</HashCode>
+      <FileName>Graphics.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="model" />
+      <Field Name="camera" />
+      <Field Name="textureShader" />
+      <Field Name="colorShader" />
+      <Field Name="direct3D" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="Input">
+    <Position X="0.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAIgQAAAAgAAAAAEAAAAAAAAAAAQAAAAAA=</HashCode>
+      <FileName>Input.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ModelClass">
+    <Position X="9.5" Y="1.25" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="ModelClass::VertexType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Modelclass.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>ACA0AAACAgAAAYAQAQAAARAAABAAAgEAABAAAACAAAA=</HashCode>
+      <FileName>Modelclass.h</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Field Name="texture" />
+    </ShowAsAssociation>
+  </Class>
+  <Class Name="TextureClass">
+    <Position X="12" Y="1.25" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="TextureClass::TargaHeader" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Textureclass.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAABAACABAAIQAAAAAAAQAAAAAAAgAAAAAAAAAAkAA=</HashCode>
+      <FileName>Textureclass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TextureShaderClass">
+    <Position X="2.25" Y="5.25" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="TextureShaderClass::MatrixBufferType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Textureshaderclass.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AIgAIAQBABAAAQIAEAAEAQAAEAAAAAAAABAACAAAEAA=</HashCode>
+      <FileName>Textureshaderclass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CameraClass">
+    <Position X="5.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACCACAAAAACAIgAAACAAAggAARAAAAAAAAA=</HashCode>
+      <FileName>Cameraclass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ColorShaderClass">
+    <Position X="4" Y="5.25" Width="1.5" />
+    <NestedTypes>
+      <Struct Name="ColorShaderClass::MatrixBufferType" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Colorshaderclass.h</NewMemberFileName>
+        </TypeIdentifier>
+      </Struct>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AIgAAAABABAAAQIAEAAEAQAAEAAAAAAAABIACAAACAA=</HashCode>
+      <FileName>Colorshaderclass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="D3DClass">
+    <Position X="7.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AACCiAACECAAAQgAEEEQQQEBAAAAAQhABgBAAAAgBAA=</HashCode>
+      <FileName>D3dclass.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

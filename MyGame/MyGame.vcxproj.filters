@@ -19,6 +19,9 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{594d2b73-b1ea-4911-8c5e-8f3369c66c18}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Документация">
+      <UniqueIdentifier>{64a96060-5abf-4445-bb7e-e1cf2955eb8f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MathExceptions.h">
@@ -103,11 +106,21 @@
     <None Include="Color.ps">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="Texture.ps">
-      <Filter>Shaders</Filter>
-    </None>
     <None Include="Texture.vs">
       <Filter>Shaders</Filter>
     </None>
+    <None Include="ClassDiagram.cd">
+      <Filter>Документация</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="data\stone01.tga">
+      <Filter>Файлы ресурсов</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Texture.ps">
+      <Filter>Shaders</Filter>
+    </Text>
   </ItemGroup>
 </Project>
