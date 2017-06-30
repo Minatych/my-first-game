@@ -12,34 +12,34 @@
     </ShowAsAssociation>
   </Class>
   <Class Name="Graphics" Collapsed="true">
-    <Position X="4.5" Y="1.25" Width="1.5" />
+    <Position X="4" Y="1.25" Width="1.5" />
     <AssociationLine Name="camera" Type="CameraClass" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5.521" Y="1.812" />
-        <Point X="5.521" Y="4.236" />
-        <Point X="6.562" Y="4.236" />
+        <Point X="5.021" Y="1.812" />
+        <Point X="5.021" Y="3.892" />
+        <Point X="6.562" Y="3.892" />
         <Point X="6.562" Y="5.25" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="textureShader" Type="TextureShaderClass" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="4.979" Y="1.812" />
-        <Point X="4.979" Y="3.89" />
+        <Point X="4.479" Y="1.812" />
+        <Point X="4.479" Y="3.89" />
         <Point X="3" Y="3.89" />
         <Point X="3" Y="5.25" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="colorShader" Type="ColorShaderClass" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
       <Path>
-        <Point X="5.25" Y="1.812" />
-        <Point X="5.25" Y="4.192" />
+        <Point X="4.75" Y="1.812" />
+        <Point X="4.75" Y="4.192" />
         <Point X="4.75" Y="4.192" />
         <Point X="4.75" Y="5.25" />
       </Path>
     </AssociationLine>
     <AssociationLine Name="direct3D" Type="D3DClass" ManuallyRouted="true" FixedFromPoint="true">
       <Path>
-        <Point X="6" Y="1.403" />
+        <Point X="5.5" Y="1.403" />
         <Point X="7.5" Y="1.403" />
       </Path>
     </AssociationLine>
@@ -109,6 +109,9 @@
   </Class>
   <Class Name="CameraClass">
     <Position X="5.75" Y="5.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
     <TypeIdentifier>
       <HashCode>AAAAAAAAACCACAAAAACAIgAAACAAAggAARAAAAAAAAA=</HashCode>
       <FileName>Cameraclass.h</FileName>
